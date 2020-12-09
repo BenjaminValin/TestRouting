@@ -1,0 +1,22 @@
+<div id="form">Ajouter une personne à la liste :
+    <form [formGroup]="form_player" (submit)="onSubmit()">
+      <div>
+        <label for="nom">Nom</label> <br>
+        <input type="text" id="nom" formControlName="nom">
+      </div>
+      <div>
+        <label for="prenom">Prénom</label> <br>
+        <input type="text" id="prenom" formControlName="prenom">
+      </div>
+      <div>
+        <label for="age">Age</label><br>
+        <input type="number" id="age" formControlName="age" min="15" max="45">
+      </div>
+      <div>
+        <label for="taille">Taille</label><br>
+        <input type="number" id="taille" formControlName="taille" min="165" max="275">
+      </div>
+      <button type="submit">Ajouter ce joueur</button>
+    </form>
+</div>
+

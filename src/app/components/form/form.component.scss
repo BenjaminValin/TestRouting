@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(127, 129, 155);
+    width: 1600px;
+    height: 900px;
+}
+
+#form{
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 3px ridge rgb(215, 218, 40);
+    border-radius: 16px;
+}
+
+#list1{
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 3px solid rgb(5, 8, 51);
+    border-radius: 16px;
+}
+
+#list2{
+    background-color: white;
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 3px solid rgb(24, 133, 48);
+    border-radius: 16px;
+}
+
+#critere{
+    border-color: #042744;
+    background-color: #db6464;
+    border-left: 6px solid rgb(253, 0, 0);
+    margin: 5px;
+    padding: 15px;
+    width: 400px;
+    height: auto;
+}
+
+#button {
+    background-color: #1410ee;
+    border: none;
+    color: rgb(158, 158, 158);
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#answer{
+    background-color: rgb(255, 166, 0);
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 15px;
+    border: 3px solid rgb(109, 110, 13);
+    border-radius: 16px;
+    font-size: 25px;
+}
+
+.underlined{
+    text-decoration: underline red;
+}
+
+.notgood{
+    border-color: red;
+}

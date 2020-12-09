@@ -1,0 +1,49 @@
+<body>
+
+  <h1>{{title | uppercase}} du {{date | date:'dd/MM/yyyy HH:mm'}} </h1>
+
+  <div id="critere">
+    <form [formGroup]="form_tri" (submit)="tri()">
+      <label for="tri">Critère</label> <br>
+      <input type="text" id="tri" formControlName="tri">
+      <button id="button" type="submit">Trier selon ce critère</button>
+    </form>
+  </div>
+
+  <div id="answer" *ngIf="critere.length>0">
+    <div *ngIf="listeOK.length == 0 && liste.length>0 && critere.length>0"> Aucun résultat correspondant</div>
+    <div *ngIf="listeOK.length == liste.length && liste.length>0"> Aucun tri fait, tous les noms de la liste initiale correspondent</div>
+    <div *ngIf="listeOK.length > 0 && listeOK.length < liste.length"> Après tri : {{listeOK.length}}/{{liste.length}} personnes restantes</div>
+  </div>
+
+  <div id="list1" *ngIf="liste.length > 0">Liste initiale :
+    <ul *ngFor="let pers of liste">
+      <li>{{ pers.nom }}, {{ pers.age }} ans, habitant à {{ pers.ville }}</li>
+    </ul>
+  </div>
+
+  <div id="list2" *ngIf="listeOK.length > 0 && listeOK.length < liste.length">Liste filtrée selon critère :
+    <ul *ngFor="let pers of listeOK">
+      <li [ngClass]="{underlined:pers.nom.length>6}">{{ pers.nom }}, {{ pers.age }} ans, habitant à {{ pers.ville }}</li>
+    </ul>
+  </div>
+
+  <div id="form">Ajouter une personne à la liste :
+    <form [formGroup]="form_pers" (submit)="onSubmit()">
+      <div>
+        <label for="nom">Prénom</label> <br>
+        <input [ngClass]="{notgood:form_pers.controls.nom.invalid && form_pers.controls.nom.touched}" type="text" id="nom" formControlName="nom">
+      </div>
+      <div>
+        <label for="age">Age</label><br>
+        <input [ngClass]="{notgood:form_pers.controls.age.invalid && form_pers.controls.age.touched}" type="number" id="age" formControlName="age" min="0" max="119">
+      </div>
+      <div>
+        <label for="ville">Ville</label><br>
+        <input [ngClass]="{notgood:form_pers.controls.age.invalid && form_pers.controls.age.touched}" type="text" id="ville" formControlName="ville">
+      </div>
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+
+</body>
